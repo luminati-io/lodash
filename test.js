@@ -4,11 +4,13 @@
 
 var assert = require('assert');
 var l = require('./');
+var map = require('./collection/map');
 
 // Check that lodash is working
 assert.equal(typeof l, 'function');
 assert.equal(typeof l.map([1,2], function(i){ return i+1;}), 'object');
 assert.deepEqual(l.map([1,2], function(i){ return i+1;}), [2,3]);
+assert.deepEqual(map([1,2], function(i){ return i+1;}), [2,3]);
 
 // Check that it didn't globalize anything.
 assert.equal(typeof _, 'undefined');
